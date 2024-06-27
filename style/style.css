@@ -1,0 +1,183 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --color-primario: #000000;
+    --color-secundario: #f6f6f6;
+    --color-terciario: #22d4fd;
+    --color-cuarto: magenta;
+    --color-quinto: yellow;
+    --color-hover: #272727;
+
+    --fuente-montserrat: "Montserrat", sans-serif;
+    --fuente-krona: "Krona One", sans-serif;
+}
+
+.amarillo{
+    color: var(--color-quinto);
+}
+
+.magenta{
+    color: var(--color-cuarto);
+}
+
+*{      /* el "*" nos dice que haremos un cambio universal, es decir, en todo el documento HTML*/
+    padding: 0;
+    margin: 0;
+} 
+
+body{
+    /*height: 100vh;*/
+    box-sizing: border-box;
+    background-color: var(--color-primario);
+    /*color:*/
+}
+
+.header{
+    padding: 2% 0% 0% 15%; /* definir la distancia entre el contenido y los bordes*/
+}
+
+.header__menu{
+    display: flex;
+    gap: 80px; 
+}
+
+.header__menu__link{
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem; /*tamaño de letra*/
+    font-weight: 600;
+    color: var(--color-quinto);
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 400; /*ancho de letra*/
+    
+}
+
+.header__menu__link:hover{
+    color: var(--color-secundario);
+}
+
+.destacado{    /* el punto "." hace referencia a la clase en html y el nombre q le asignamos a la clase */
+    color: var(--color-terciario);
+}
+
+.textoParrafo1{
+    color: var(--color-secundario);
+    margin: 10px;
+    font-size: 1.5rem;
+    font-family: var(--fuente-montserrat);
+    text-align: left;
+}
+
+.textoParrafo2{
+    color: var(--color-secundario);
+    margin: 10px;
+    font-size: 1.25rem;
+    font-family: var(--fuente-montserrat);
+    text-align: left;
+}
+
+.presentacion__contenido__titulo{
+    color: var(--color-cuarto);
+    margin: 10px;
+    padding: 5px; 
+    font-size: 2.25rem;
+    font-family: var(--fuente-krona);
+    text-align: left;
+}
+
+.presentacion{
+    display: flex;
+    align-items: center;
+    padding: 6% 15%;
+    justify-content: space-between;
+    gap: 82px;      /*el "gap" se usa para dar espacio entre las secciones*/
+}
+
+.presentacion__contenido{
+    width: 50%;
+    display: flex;      /* Flexbox tiene como meta ser una forma más eficiente de crear diseños, alinear y distribuir espacios entre ítems en un contenedor, incluso cuando las dimensiones de esos ítems son desconocidas y/o dinámicas (en virtud de eso el término "flex").*/
+    flex-direction: column;  
+    gap: 40px;
+}
+
+.presentacion__contenido__lista{
+    text-decoration: none;
+    color: var(--color-terciario);
+}
+
+.presentacion__enlaces{
+    display: flex;
+    justify-content: space-between;
+    margin: 3%;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    text-align: center;
+}
+
+.presentacion__enlaces__subtitulo{
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;      /*es MUY importante utilizar unidades de medida relativas en los textos y títulos e incluso en los elemntos del sitio web*/
+    font-weight: 400;           /*estas medidas ayudan a las personas con baja visión para cambiar la apariencia o aplicar el zoom*/
+    color: var(--color-quinto);    
+}
+
+.presentacion__enlaces__link{      /*botones*/
+    width: 50%;     /*cambiando el "width" por "%" en vez de "px" ayuda a q los botones se adapten*/
+    /*background-color: #22D4FD;*/
+    text-align: center;
+    padding: 21.5px 0;
+    border-radius: 8px;
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;      /*un "rem" es igual a 16px (1rem = 16px), es una unidad para fuentes*/
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-cuarto); 
+    /*box-shadow: 9px 9px yellow;*/
+    border: 2px solid var(--color-secundario);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.presentacion__enlaces__link:hover{     /*el selector "hover" para cuando ponemos el cursor en el link, cambie de tono*/
+    background-color: var(--color-hover);
+}
+
+.presentacion__imagen{
+    width: 50%;
+}
+
+.footer{
+    background-color: var(--color-terciario);
+    padding: 24px;
+    color: var(--color-primario);
+    text-align: center;
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;  /*cambiamos los "px" por "rem" ya que nos permite definir una medida de forma relativa al tamaño de la fuete raíz*/
+    font-weight: 400;
+}
+
+@media (max-width: 1200px){     /*usamos una "media queri" que permiten aplicar estilos CSS según el tipo general de un dispositivo*/
+                            /*"max-width" es el puno de quiebre para aplicar los cambios*/
+    .header{
+        padding: 10%;
+    }
+
+    .header__menu{
+        justify-content: center;
+    }
+  
+    .presentacion{
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .presentacion__contenido{
+        width: auto;        /*"width: auto" va a adaptarse siempre al elemento padre*/
+    } 
+}
+
+    
